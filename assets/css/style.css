@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 62.5%;
+}
+
+:root {
+    --background-primary-color: #a300cc;
+    --white-color: #FFFFFF;
+    --grey-color: #b3b3b3;
+}
+
+body {
+    background-color: var(--background-primary-color); 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; 
+}
+
+#main-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    border-radius: 2rem;
+    background-color: var(--white-color);
+}
+
+#main-frame h1 {
+    font-size: 5rem;
+    margin: 2rem 0; 
+}
+
+#game-map {
+    margin: 3rem 35rem 3rem 35rem;
+}
+
+#game-map table {
+    border-collapse: collapse;
+}
+
+#game-map .game-button {
+    background-color: var(--white-color);
+    height: 10rem;
+    width: 10rem;
+    font-size: 5rem;
+    border: none;
+    cursor: pointer;
+}
+
+#game-map .game-button:hover {
+    background-color: var(--grey-color);
+}
+
+#game-map {
+    #game-button-1 {
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+    }
+    
+    #game-button-2 {
+        border-bottom: 2px solid;
+        border-left: 2px solid;
+        border-right: 2px solid;
+    }
+    
+    #game-button-3 {
+        border-bottom: 2px solid;
+        border-left: 2px solid;
+    }
+    
+    #game-button-4 {
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+    }
+    
+    #game-button-5 {
+        border: 2px solid;
+    }
+    
+    #game-button-6 {
+        border-top: 2px solid;
+        border-bottom: 2px solid;
+        border-left: 2px solid;
+    }
+
+    #game-button-7 {
+        border-top: 2px solid;
+        border-right: 2px solid;
+    }
+
+    #game-button-8 {
+        border-top: 2px solid;
+        border-left: 2px solid;
+        border-right: 2px solid;
+    }
+
+    #game-button-9 {
+        border-top: 2px solid;
+        border-left: 2px solid;
+    }
+}
