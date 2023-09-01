@@ -6,7 +6,7 @@
 }
 
 :root {
-    --background-primary-color: #a300cc;
+    --background-primary-color: #009933;
     --white-color: #FFFFFF;
     --grey-color: #e6e6e6;
     --green-color: #43f443;
@@ -108,24 +108,24 @@ body {
 
 #game-results {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     width: 80%;
     margin: 5rem;
 }
 
 #game-results p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-right: 3rem;
     cursor: default;
 }
 
-#game-results .game-mode-button {
+.game-mode-button, #start-game-button{
     background: rgb(0, 0, 0, 0);
-    height: 3rem;
-    width: 6rem;
+    height: 5rem;
+    width: 8rem;
     font-size: 1rem;
-    border-radius: .5rem;
+    border-radius: 1.5rem;
     cursor: pointer;
     margin: .5rem;
     transition: .5s ease-out;
@@ -141,10 +141,16 @@ body {
     border-color: var(--green-color);
 }
 
-#game-mode-button-single:hover {
+.selected#game-mode-button-single {
     background-color: var(--red-color);
 }
 
-#game-mode-button-multi:hover {
+.selected#game-mode-button-multi {
     background-color: var(--green-color);
+}
+
+#select-game-mode {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
