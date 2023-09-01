@@ -18,21 +18,21 @@ function factoryGame() {
         },
 
         clickButton(button) {
-            if(button.id === "game-button-1") this.selectButton(this.turn, 0);
-            if(button.id === "game-button-2") this.selectButton(this.turn, 1);
-            if(button.id === "game-button-3") this.selectButton(this.turn, 2);
-            if(button.id === "game-button-4") this.selectButton(this.turn, 3);
-            if(button.id === "game-button-5") this.selectButton(this.turn, 4);
-            if(button.id === "game-button-6") this.selectButton(this.turn, 5);
-            if(button.id === "game-button-7") this.selectButton(this.turn, 6);
-            if(button.id === "game-button-8") this.selectButton(this.turn, 7);
-            if(button.id === "game-button-9") this.selectButton(this.turn, 8);
+            if(button.id === "game-button-0") this.selectButton(this.turn, 0);
+            if(button.id === "game-button-1") this.selectButton(this.turn, 1);
+            if(button.id === "game-button-2") this.selectButton(this.turn, 2);
+            if(button.id === "game-button-3") this.selectButton(this.turn, 3);
+            if(button.id === "game-button-4") this.selectButton(this.turn, 4);
+            if(button.id === "game-button-5") this.selectButton(this.turn, 5);
+            if(button.id === "game-button-6") this.selectButton(this.turn, 6);
+            if(button.id === "game-button-7") this.selectButton(this.turn, 7);
+            if(button.id === "game-button-8") this.selectButton(this.turn, 8);
         },
 
         selectButton(turn, buttonNumber) { 
             if(turn === 1) {
                 this.gameButtons[buttonNumber].innerText = "X"
-                this.turn = 0;
+                this.turn = 2;
             } else {
                 this.gameButtons[buttonNumber].innerText = "O"
                 this.turn = 1;
