@@ -1,6 +1,8 @@
 const startButton = document.querySelector("#start-game-button");
+const reloadButton = document.querySelector("#reload-game-button");
 const gameMap = document.querySelector("#game-map");
 const gameButtons = document.querySelectorAll(".game-button"); // Each area of the game has a button, defined here:
+const resultText = document.querySelector("#result-text");
 
 function Game() {
     this.turn = 1;
@@ -10,24 +12,58 @@ function Game() {
 
 Game.prototype.startGame = () => {
     turn = 1; // 1 = X; 2 = O
+    reloadButton.removeAttribute("disabled");
 
     for(button of gameButtons) {
         button.setAttribute("onclick", "game.clickButton(this)");
     }
-
-
 };
 
 Game.prototype.clickButton = (button) => {
-    if(button.id === "game-button-0") game.selectButton(this.turn, 0);
-    if(button.id === "game-button-1") game.selectButton(this.turn, 1);
-    if(button.id === "game-button-2") game.selectButton(this.turn, 2);
-    if(button.id === "game-button-3") game.selectButton(this.turn, 3);
-    if(button.id === "game-button-4") game.selectButton(this.turn, 4);
-    if(button.id === "game-button-5") game.selectButton(this.turn, 5);
-    if(button.id === "game-button-6") game.selectButton(this.turn, 6);
-    if(button.id === "game-button-7") game.selectButton(this.turn, 7);
-    if(button.id === "game-button-8") game.selectButton(this.turn, 8);
+    if(button.id === "game-button-0") {
+        game.selectButton(this.turn, 0);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-1") { 
+        game.selectButton(this.turn, 1);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-2") { 
+        game.selectButton(this.turn, 2);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-3") { 
+        game.selectButton(this.turn, 3);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-4") { 
+        game.selectButton(this.turn, 4);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-5") { 
+        game.selectButton(this.turn, 5);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-6") { 
+        game.selectButton(this.turn, 6);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-7") { 
+        game.selectButton(this.turn, 7);
+        game.checkWin();
+    }
+
+    if(button.id === "game-button-8") { 
+        game.selectButton(this.turn, 8);
+        game.checkWin();
+    }
 };
 
 Game.prototype.selectButton = (turn, buttonNumber) => {
@@ -49,14 +85,21 @@ Game.prototype.checkWin = () => {
 };
 
 Game.prototype.reloadGame = () => {
-    for(button of this.gameButtons) {
+    for(button of gameButtons) {
         button.innerText = "";
-        gameButtonsState = gameButtonsState.map(() => 0);
+        button.removeAttribute("onclick", "game.clickButton(this)");
     }
+
+    game.gameButtons = game.gameButtonsState.map(() => 1)
 };
 
 const game = new Game();
 startButton.addEventListener("click", e => {
     e.preventDefault();
     game.startGame();
+});
+
+reloadButton.addEventListener("click", e => {
+    e.preventDefault();
+    game.reloadGame();
 });

@@ -120,37 +120,25 @@ body {
     cursor: default;
 }
 
-.game-mode-button, #start-game-button{
+#start-game-button, #reload-game-button {
     background: rgb(0, 0, 0, 0);
     height: 5rem;
     width: 8rem;
     font-size: 1rem;
     border-radius: 1.5rem;
+    border-width: .35rem;
     cursor: pointer;
     margin: .5rem;
     transition: .5s ease-out;
+    font-weight: bold;
 }
 
-#game-mode-button-single {
-    border: 2px solid;
-    border-color: var(--red-color);
-}
-
-#game-mode-button-multi {
-    border: 2px solid;
+#start-game-button {
     border-color: var(--green-color);
+    color: var(--green-color);
 }
 
-.selected#game-mode-button-single {
-    background-color: var(--red-color);
-}
-
-.selected#game-mode-button-multi {
-    background-color: var(--green-color);
-}
-
-#select-game-mode {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+#reload-game-button {
+    border-color: var(--red-color);
+    color: var(--red-color);
 }
