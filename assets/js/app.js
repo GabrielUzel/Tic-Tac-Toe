@@ -1,7 +1,7 @@
 const startButton = document.querySelector("#start-game-button");
 const reloadButton = document.querySelector("#reload-game-button");
 const gameMap = document.querySelector("#game-map");
-const gameButtons = document.querySelectorAll(".game-button"); // Each area of the game has a button, defined here:
+const gameButtons = document.querySelectorAll(".game-button");
 const resultText = document.querySelector("#result-text");
 
 function Game() {
@@ -11,11 +11,12 @@ function Game() {
 }
 
 Game.prototype.startGame = () => {
-    turn = 1; // 1 = X; 2 = O
-    reloadButton.removeAttribute("disabled");
+    turn = 1; // Set the turn; 1 = X; 2 = O
+    reloadButton.removeAttribute("disabled"); // Activate the reload button after the first start
+    resultText.innerText = 'Player "X" turn';
 
     for(button of gameButtons) {
-        button.setAttribute("onclick", "game.clickButton(this)");
+        button.setAttribute("onclick", "game.clickButton(this)"); // Enable the area buttons
     }
 };
 
@@ -68,20 +69,25 @@ Game.prototype.clickButton = (button) => {
 
 Game.prototype.selectButton = (turn, buttonNumber) => {
     if(turn === 1) {
-        gameButtons[buttonNumber].innerText = "X"
-        game.gameButtonsState[buttonNumber] = 1;
-        gameButtons[buttonNumber].removeAttribute("onclick");
-        this.turn = 2;
+        gameButtons[buttonNumber].innerText = "X" // Make the play
+        game.gameButtonsState[buttonNumber] = 1; // Modify the array for check the winner move
+        this.turn = 2; // Set the turn to the other player
+        resultText.innerText = 'Player "O" turn'
     } else {
-        gameButtons[buttonNumber].innerText = "O";
-        game.gameButtonsState[buttonNumber] = 2;
-        gameButtons[buttonNumber].removeAttribute("onclick");
-        this.turn = 1;
+        gameButtons[buttonNumber].innerText = "O"; // Make the play
+        game.gameButtonsState[buttonNumber] = 2; // Modify the array for check the winner move
+        this.turn = 1; // Set the turn to the other player
+        resultText.innerText = 'Player "X" turn';
     }
+
+    gameButtons[buttonNumber].removeAttribute("onclick"); // Disable the button
 };
 
 Game.prototype.checkWin = () => {
-    return 0;
+
+    
+    // If no player won and all buttons were cliked, the match tied
+    if(game.gameButtonsState.filter(element => element !== 0).length === 9) resultText.innerText = "Draw"; 
 };
 
 Game.prototype.reloadGame = () => {
@@ -90,7 +96,8 @@ Game.prototype.reloadGame = () => {
         button.removeAttribute("onclick", "game.clickButton(this)");
     }
 
-    game.gameButtons = game.gameButtonsState.map(() => 1)
+    game.gameButtons = game.gameButtonsState.map(() => 0);
+    resultText.innerText = "Press the start button to begin";
 };
 
 const game = new Game();
