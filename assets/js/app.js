@@ -99,7 +99,7 @@ Game.prototype.checkWin = () => {
         }
     }
 
-    if(game.gameButtonsState[3] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[5] &&
+    else if(game.gameButtonsState[3] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[5] &&
         game.gameButtonsState[3] !== 0) {
         if(game.gameButtonsState[3] === 1) resultText.innerText = 'Winner: Player "X"';
         else resultText.innerText = 'Winner: Player "O"';
@@ -113,7 +113,7 @@ Game.prototype.checkWin = () => {
         }
     }
 
-    if(game.gameButtonsState[6] === game.gameButtonsState[7] && game.gameButtonsState[7] === game.gameButtonsState[8] &&
+    else if(game.gameButtonsState[6] === game.gameButtonsState[7] && game.gameButtonsState[7] === game.gameButtonsState[8] &&
         game.gameButtonsState[6] !== 0) {
         if(game.gameButtonsState[6] === 1) resultText.innerText = 'Winner: Player "X"';
         else resultText.innerText = 'Winner: Player "O"';
@@ -129,7 +129,7 @@ Game.prototype.checkWin = () => {
 
     /* Verify if a player won by a vertical line */
 
-    if(game.gameButtonsState[0] === game.gameButtonsState[3] && game.gameButtonsState[3] === game.gameButtonsState[6] &&
+    else if(game.gameButtonsState[0] === game.gameButtonsState[3] && game.gameButtonsState[3] === game.gameButtonsState[6] &&
         game.gameButtonsState[0] !== 0) {
         if(game.gameButtonsState[0] === 1) resultText.innerText = 'Winner: Player "X"';
         else resultText.innerText = 'Winner: Player "O"';
@@ -143,7 +143,7 @@ Game.prototype.checkWin = () => {
         }
     }
 
-    if(game.gameButtonsState[1] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[7] &&
+    else if(game.gameButtonsState[1] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[7] &&
         game.gameButtonsState[1] !== 0) {
         if(game.gameButtonsState[1] === 1) resultText.innerText = 'Winner: Player "X"';
         else resultText.innerText = 'Winner: Player "O"';
@@ -157,7 +157,7 @@ Game.prototype.checkWin = () => {
         }
     }
 
-    if(game.gameButtonsState[2] === game.gameButtonsState[5] && game.gameButtonsState[5] === game.gameButtonsState[8] &&
+    else if(game.gameButtonsState[2] === game.gameButtonsState[5] && game.gameButtonsState[5] === game.gameButtonsState[8] &&
         game.gameButtonsState[2] !== 0) {
         if(game.gameButtonsState[2] === 1) resultText.innerText = 'Winner: Player "X"';
         else resultText.innerText = 'Winner: Player "O"';
@@ -172,7 +172,7 @@ Game.prototype.checkWin = () => {
     }
 
     /* Verify if a player won by a diagonal line */
-    if(game.gameButtonsState[0] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[8] &&
+    else if(game.gameButtonsState[0] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[8] &&
         game.gameButtonsState[0] !== 0) {
         if(game.gameButtonsState[0] === 1) resultText.innerText = 'Winner: Player "X"';
         else resultText.innerText = 'Winner: Player "O"';
@@ -186,7 +186,7 @@ Game.prototype.checkWin = () => {
         }
     }
 
-    if(game.gameButtonsState[2] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[6] &&
+    else if(game.gameButtonsState[2] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[6] &&
         game.gameButtonsState[2] !== 0) {
         if(game.gameButtonsState[2] === 1) resultText.innerText = 'Winner: Player "X"';
         else resultText.innerText = 'Winner: Player "O"';
@@ -201,7 +201,7 @@ Game.prototype.checkWin = () => {
     }
     
     // If no player won and all buttons were cliked, the match tied
-    if(game.gameButtonsState.filter(element => element !== 0).length === 9) resultText.innerText = "Draw"; 
+    else if(game.gameButtonsState.filter(element => element !== 0).length === 9) resultText.innerText = "Draw";
 };
 
 Game.prototype.reloadGame = () => {
