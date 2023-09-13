@@ -127,6 +127,7 @@ body {
     font-size: 1rem;
     border-radius: 1.5rem;
     border-width: .35rem;
+    border-style: solid;
     cursor: pointer;
     margin: .5rem;
     transition: .5s ease-out;

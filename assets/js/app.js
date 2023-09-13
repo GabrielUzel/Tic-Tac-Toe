@@ -84,7 +84,121 @@ Game.prototype.selectButton = (turn, buttonNumber) => {
 };
 
 Game.prototype.checkWin = () => {
+    /* Verify if a player won by a horizontal line */
+    if(game.gameButtonsState[0] === game.gameButtonsState[1] && game.gameButtonsState[1] === game.gameButtonsState[2] &&
+        game.gameButtonsState[0] !== 0) {
+        if(game.gameButtonsState[0] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
 
+        gameButtons[0].setAttribute("style", "color: red");
+        gameButtons[1].setAttribute("style", "color: red");
+        gameButtons[2].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
+
+    if(game.gameButtonsState[3] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[5] &&
+        game.gameButtonsState[3] !== 0) {
+        if(game.gameButtonsState[3] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
+
+        gameButtons[3].setAttribute("style", "color: red");
+        gameButtons[4].setAttribute("style", "color: red");
+        gameButtons[5].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
+
+    if(game.gameButtonsState[6] === game.gameButtonsState[7] && game.gameButtonsState[7] === game.gameButtonsState[8] &&
+        game.gameButtonsState[6] !== 0) {
+        if(game.gameButtonsState[6] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
+
+        gameButtons[6].setAttribute("style", "color: red");
+        gameButtons[7].setAttribute("style", "color: red");
+        gameButtons[8].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
+
+    /* Verify if a player won by a vertical line */
+
+    if(game.gameButtonsState[0] === game.gameButtonsState[3] && game.gameButtonsState[3] === game.gameButtonsState[6] &&
+        game.gameButtonsState[0] !== 0) {
+        if(game.gameButtonsState[0] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
+
+        gameButtons[0].setAttribute("style", "color: red");
+        gameButtons[3].setAttribute("style", "color: red");
+        gameButtons[6].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
+
+    if(game.gameButtonsState[1] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[7] &&
+        game.gameButtonsState[1] !== 0) {
+        if(game.gameButtonsState[1] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
+
+        gameButtons[1].setAttribute("style", "color: red");
+        gameButtons[4].setAttribute("style", "color: red");
+        gameButtons[7].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
+
+    if(game.gameButtonsState[2] === game.gameButtonsState[5] && game.gameButtonsState[5] === game.gameButtonsState[8] &&
+        game.gameButtonsState[2] !== 0) {
+        if(game.gameButtonsState[2] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
+
+        gameButtons[2].setAttribute("style", "color: red");
+        gameButtons[5].setAttribute("style", "color: red");
+        gameButtons[8].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
+
+    /* Verify if a player won by a diagonal line */
+    if(game.gameButtonsState[0] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[8] &&
+        game.gameButtonsState[0] !== 0) {
+        if(game.gameButtonsState[0] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
+
+        gameButtons[0].setAttribute("style", "color: red");
+        gameButtons[4].setAttribute("style", "color: red");
+        gameButtons[8].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
+
+    if(game.gameButtonsState[2] === game.gameButtonsState[4] && game.gameButtonsState[4] === game.gameButtonsState[6] &&
+        game.gameButtonsState[2] !== 0) {
+        if(game.gameButtonsState[2] === 1) resultText.innerText = 'Winner: Player "X"';
+        else resultText.innerText = 'Winner: Player "O"';
+
+        gameButtons[2].setAttribute("style", "color: red");
+        gameButtons[4].setAttribute("style", "color: red");
+        gameButtons[6].setAttribute("style", "color: red");
+
+        for(button of gameButtons) {
+            button.removeAttribute("onclick");
+        }
+    }
     
     // If no player won and all buttons were cliked, the match tied
     if(game.gameButtonsState.filter(element => element !== 0).length === 9) resultText.innerText = "Draw"; 
@@ -94,9 +208,10 @@ Game.prototype.reloadGame = () => {
     for(button of gameButtons) {
         button.innerText = "";
         button.removeAttribute("onclick", "game.clickButton(this)");
+        button.setAttribute("style", "color: black");
     }
 
-    game.gameButtons = game.gameButtonsState.map(() => 0);
+    game.gameButtonsState = game.gameButtonsState.map(() => 0);
     resultText.innerText = "Press the start button to begin";
 };
 
