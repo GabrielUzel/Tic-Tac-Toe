@@ -52,7 +52,7 @@ class Game {
             resultText.innerText = 'Player "X" turn';
         }
     
-         // Disable the button
+        gameButtons[buttonNumber].onclick = null; // Disable the button
     }
 
     checkWin() {
@@ -203,11 +203,11 @@ class Game {
     reloadGame() {
         for(let button of gameButtons) {
             button.innerText = "";
-            button.removeEventListener("click");
+            button.onclick = null;
             button.setAttribute("style", "color: black");
         }
     
-        gameButtonsState = gameButtonsState.map(() => 0);
+        this.gameButtonsState = this.gameButtonsState.map(() => 0);
         resultText.innerText = "Press the start button to begin";
     }
 }
