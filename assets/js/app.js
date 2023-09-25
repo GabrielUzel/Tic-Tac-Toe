@@ -56,17 +56,17 @@ class Game {
     }
 
     checkWin() {
-        let winner = 0;
+        let thereIsAWinner = 0;
 
         /* Verify if a player won by a horizontal line */
         if(this.gameButtonsState[0] === this.gameButtonsState[1] && this.gameButtonsState[1] === this.gameButtonsState[2] &&
             this.gameButtonsState[0] !== 0) {
             if(this.gameButtonsState[0] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             }
             else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -78,11 +78,11 @@ class Game {
         else if(this.gameButtonsState[3] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[5] &&
             this.gameButtonsState[3] !== 0) {
             if(this.gameButtonsState[3] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             }
             else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -94,10 +94,10 @@ class Game {
         else if(this.gameButtonsState[6] === this.gameButtonsState[7] && this.gameButtonsState[7] === this.gameButtonsState[8] &&
             this.gameButtonsState[6] !== 0) {
             if(this.gameButtonsState[6] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             } else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -111,10 +111,10 @@ class Game {
         else if(this.gameButtonsState[0] === this.gameButtonsState[3] && this.gameButtonsState[3] === this.gameButtonsState[6] &&
             this.gameButtonsState[0] !== 0) {
             if(this.gameButtonsState[0] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             } else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -126,10 +126,10 @@ class Game {
         else if(this.gameButtonsState[1] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[7] &&
             this.gameButtonsState[1] !== 0) {
             if(this.gameButtonsState[1] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             } else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -141,10 +141,10 @@ class Game {
         else if(this.gameButtonsState[2] === this.gameButtonsState[5] && this.gameButtonsState[5] === this.gameButtonsState[8] &&
             this.gameButtonsState[2] !== 0) {
             if(this.gameButtonsState[2] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             } else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -157,10 +157,10 @@ class Game {
         else if(this.gameButtonsState[0] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[8] &&
             this.gameButtonsState[0] !== 0) {
             if(this.gameButtonsState[0] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             } else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -172,10 +172,10 @@ class Game {
         else if(this.gameButtonsState[2] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[6] &&
             this.gameButtonsState[2] !== 0) {
             if(this.gameButtonsState[2] === 1) {
-                winner = 1;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
             } else {
-                winner = 2;
+                thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
             }
 
@@ -193,6 +193,7 @@ class Game {
             }
         }
 
+        // Disable all buttons win there was a winner
         if(winner !== 0) {
             for(let button of gameButtons) {
                 button.onclick = null;
