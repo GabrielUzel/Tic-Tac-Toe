@@ -37,14 +37,14 @@ class Game {
 
     selectButton(turn, buttonNumber) {
         if(turn === 1) {
-            gameButtons[buttonNumber].innerText = "X" // Make the play
+            gameButtons[buttonNumber].style.backgroundImage = "url(assets/img/x-image.svg)"; // Make the play
 
             this.gameButtonsState[buttonNumber] = 1; // Modify the array for check the winner move
             this.turn = 2; // Set the turn to the other player
 
             resultText.innerText = 'Player "O" turn'
         } else {
-            gameButtons[buttonNumber].innerText = "O"; // Make the play
+            gameButtons[buttonNumber].style.backgroundImage = "url(assets/img/o-image.svg)"; // Make the play
 
             this.gameButtonsState[buttonNumber] = 2; // Modify the array for check the winner move
             this.turn = 1; // Set the turn to the other player
@@ -64,15 +64,19 @@ class Game {
             if(this.gameButtonsState[0] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[0].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[1].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[2].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             }
             else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[0].setAttribute("style", "color: red");
-            gameButtons[1].setAttribute("style", "color: red");
-            gameButtons[2].setAttribute("style", "color: red");
+                gameButtons[0].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[1].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[2].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
 
         else if(this.gameButtonsState[3] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[5] &&
@@ -80,15 +84,19 @@ class Game {
             if(this.gameButtonsState[3] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[3].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[5].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             }
             else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[3].setAttribute("style", "color: red");
-            gameButtons[4].setAttribute("style", "color: red");
-            gameButtons[5].setAttribute("style", "color: red");
+                gameButtons[3].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[5].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
 
         else if(this.gameButtonsState[6] === this.gameButtonsState[7] && this.gameButtonsState[7] === this.gameButtonsState[8] &&
@@ -96,14 +104,18 @@ class Game {
             if(this.gameButtonsState[6] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[6].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[7].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[8].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             } else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[6].setAttribute("style", "color: red");
-            gameButtons[7].setAttribute("style", "color: red");
-            gameButtons[8].setAttribute("style", "color: red");
+                gameButtons[6].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[7].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[8].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
 
         /* Verify if a player won by a vertical line */
@@ -113,14 +125,18 @@ class Game {
             if(this.gameButtonsState[0] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[0].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[3].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[6].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             } else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[0].setAttribute("style", "color: red");
-            gameButtons[3].setAttribute("style", "color: red");
-            gameButtons[6].setAttribute("style", "color: red");
+                gameButtons[0].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[3].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[6].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
 
         else if(this.gameButtonsState[1] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[7] &&
@@ -128,14 +144,18 @@ class Game {
             if(this.gameButtonsState[1] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[1].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[7].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             } else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[1].setAttribute("style", "color: red");
-            gameButtons[4].setAttribute("style", "color: red");
-            gameButtons[7].setAttribute("style", "color: red");
+                gameButtons[1].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[7].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
 
         else if(this.gameButtonsState[2] === this.gameButtonsState[5] && this.gameButtonsState[5] === this.gameButtonsState[8] &&
@@ -143,14 +163,18 @@ class Game {
             if(this.gameButtonsState[2] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[2].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[5].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[8].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             } else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[2].setAttribute("style", "color: red");
-            gameButtons[5].setAttribute("style", "color: red");
-            gameButtons[8].setAttribute("style", "color: red");
+                gameButtons[2].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[5].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[8].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
 
         /* Verify if a player won by a diagonal line */
@@ -159,14 +183,18 @@ class Game {
             if(this.gameButtonsState[0] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[0].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[8].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             } else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[0].setAttribute("style", "color: red");
-            gameButtons[4].setAttribute("style", "color: red");
-            gameButtons[8].setAttribute("style", "color: red");
+                gameButtons[0].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[8].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
 
         else if(this.gameButtonsState[2] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[6] &&
@@ -174,27 +202,27 @@ class Game {
             if(this.gameButtonsState[2] === 1) {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "X"';
+
+                gameButtons[2].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/x-image-winner.svg";
+                gameButtons[6].style.backgroundImage = "url(assets/img/x-image-winner.svg";
             } else {
                 thereIsAWinner = 1;
                 resultText.innerText = 'Winner: Player "O"';
-            }
 
-            gameButtons[2].setAttribute("style", "color: red");
-            gameButtons[4].setAttribute("style", "color: red");
-            gameButtons[6].setAttribute("style", "color: red");
+                gameButtons[2].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[4].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+                gameButtons[6].style.backgroundImage = "url(assets/img/o-image-winner.svg";
+            }
         }
         
         // If no player won and all buttons were cliked, the match tied
         else if(this.gameButtonsState.filter(element => element !== 0).length === 9) {
             resultText.innerText = "Draw";
-
-            for(let button of gameButtons) {
-                button.onclick = null;
-            }
         }
 
         // Disable all buttons win there was a winner
-        if(winner !== 0) {
+        if(thereIsAWinner !== 0) {
             for(let button of gameButtons) {
                 button.onclick = null;
             }
@@ -203,9 +231,9 @@ class Game {
 
     reloadGame() {
         for(let button of gameButtons) {
-            button.innerText = "";
+            button.style.backgroundImage = null;
             button.onclick = null;
-            button.setAttribute("style", "color: black");
+            // button.setAttribute("style", "color: black");
         }
     
         this.gameButtonsState = this.gameButtonsState.map(() => 0);
