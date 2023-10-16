@@ -16,9 +16,8 @@ class Game {
         reloadButton.removeAttribute("disabled"); // Activate the reload button after the first start
         resultText.innerText = 'Player "X" turn';
 
-        for(let button of gameButtons) {
-            button.onclick = () => this.clickButton(button);
-        }
+        this.enableButtons();
+        startButton.disabled = true;
     }
 
     clickButton(button) {
@@ -223,9 +222,7 @@ class Game {
 
         // Disable all buttons win there was a winner
         if(thereIsAWinner !== 0) {
-            for(let button of gameButtons) {
-                button.onclick = null;
-            }
+            this.disablebuttons();
         }
     }
 
@@ -233,11 +230,22 @@ class Game {
         for(let button of gameButtons) {
             button.style.backgroundImage = null;
             button.onclick = null;
-            // button.setAttribute("style", "color: black");
         }
     
         this.gameButtonsState = this.gameButtonsState.map(() => 0);
         resultText.innerText = "Press the start button to begin";
+    }
+
+    enableButtons() {
+        for(let button of gameButtons) {
+            button.onclick = () => this.clickButton(button);
+        }
+    }
+
+    disablebuttons() {
+        for(let button of gameButtons) {
+            button.onclick = null;
+        }
     }
 }
 
