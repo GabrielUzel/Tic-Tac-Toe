@@ -204,7 +204,7 @@ class Game {
 
         // Disable all buttons win there was a winner
         if(thereIsAWinner !== 0) {
-            this.disablebuttons();
+            this.disableButtons();
         }
     }
 
@@ -223,7 +223,7 @@ class Game {
         }
     }
 
-    disablebuttons() {
+    disableButtons() {
         for(let button of gameButtons) {
             button.onclick = null;
         }
