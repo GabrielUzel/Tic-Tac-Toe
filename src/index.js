@@ -1,3 +1,5 @@
+import '../public/assets/css/style.css';
+
 const startButton = document.querySelector("#start-game-button");
 const reloadButton = document.querySelector("#reload-game-button");
 const gameMap = document.querySelector("#game-map");
