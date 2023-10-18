@@ -1,8 +1,9 @@
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 import '../public/assets/css/style.css';
 
 const startButton = document.querySelector("#start-game-button");
-const reloadButton = document.querySelector("#reload-game-button");
-const gameMap = document.querySelector("#game-map");
+const reloadButton = document.querySelector("#reload-game-button");;
 const gameButtons = document.querySelectorAll(".game-button");
 const resultText = document.querySelector("#result-text");
 
