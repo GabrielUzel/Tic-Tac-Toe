@@ -22800,15 +22800,7 @@ var Game = /*#__PURE__*/function () {
   }, {
     key: "clickButton",
     value: function clickButton(button) {
-      if (button.id === "game-button-0") this.selectButton(this.turn, 0);
-      if (button.id === "game-button-1") this.selectButton(this.turn, 1);
-      if (button.id === "game-button-2") this.selectButton(this.turn, 2);
-      if (button.id === "game-button-3") this.selectButton(this.turn, 3);
-      if (button.id === "game-button-4") this.selectButton(this.turn, 4);
-      if (button.id === "game-button-5") this.selectButton(this.turn, 5);
-      if (button.id === "game-button-6") this.selectButton(this.turn, 6);
-      if (button.id === "game-button-7") this.selectButton(this.turn, 7);
-      if (button.id === "game-button-8") this.selectButton(this.turn, 8);
+      this.selectButton(this.turn, parseInt(button.id.slice(-1)));
       this.checkWin();
     }
   }, {
@@ -22840,135 +22832,127 @@ var Game = /*#__PURE__*/function () {
       if (this.gameButtonsState[0] === this.gameButtonsState[1] && this.gameButtonsState[1] === this.gameButtonsState[2] && this.gameButtonsState[0] !== 0) {
         if (this.gameButtonsState[0] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(0, 1, 2, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(0, 1, 2, "O");
         }
+        thereIsAWinner = 1;
       } else if (this.gameButtonsState[3] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[5] && this.gameButtonsState[3] !== 0) {
         if (this.gameButtonsState[3] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(3, 4, 5, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(3, 4, 5, "O");
         }
+        thereIsAWinner = 1;
       } else if (this.gameButtonsState[6] === this.gameButtonsState[7] && this.gameButtonsState[7] === this.gameButtonsState[8] && this.gameButtonsState[6] !== 0) {
         if (this.gameButtonsState[6] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(6, 7, 8, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(6, 7, 8, "O");
         }
+        thereIsAWinner = 1;
       }
 
       /* Verify if a player won by a vertical line */else if (this.gameButtonsState[0] === this.gameButtonsState[3] && this.gameButtonsState[3] === this.gameButtonsState[6] && this.gameButtonsState[0] !== 0) {
         if (this.gameButtonsState[0] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(0, 3, 6, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(0, 3, 6, "O");
         }
+        thereIsAWinner = 1;
       } else if (this.gameButtonsState[1] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[7] && this.gameButtonsState[1] !== 0) {
         if (this.gameButtonsState[1] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(1, 4, 7, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(1, 4, 7, "O");
         }
+        thereIsAWinner = 1;
       } else if (this.gameButtonsState[2] === this.gameButtonsState[5] && this.gameButtonsState[5] === this.gameButtonsState[8] && this.gameButtonsState[2] !== 0) {
         if (this.gameButtonsState[2] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(2, 5, 8, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(2, 5, 8, "O");
         }
+        thereIsAWinner = 1;
       }
 
       /* Verify if a player won by a diagonal line */else if (this.gameButtonsState[0] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[8] && this.gameButtonsState[0] !== 0) {
         if (this.gameButtonsState[0] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(0, 4, 8, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(0, 4, 8, "O");
         }
+        thereIsAWinner = 1;
       } else if (this.gameButtonsState[2] === this.gameButtonsState[4] && this.gameButtonsState[4] === this.gameButtonsState[6] && this.gameButtonsState[2] !== 0) {
         if (this.gameButtonsState[2] === 1) {
           // Player "X" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "X"';
 
           // Change the images to show how the player won
           this.setImagesWinner(2, 4, 6, "X");
         } else {
           // Player "O" won
-          thereIsAWinner = 1;
           resultText.innerText = 'Winner: Player "O"';
 
           // Change the images to show how the player won
           this.setImagesWinner(2, 4, 6, "O");
         }
+        thereIsAWinner = 1;
       }
 
       // If no player won and all buttons were cliked, the match tied
