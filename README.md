@@ -11,6 +11,7 @@ Meu primeiro projeto utilizando Javascript, CSS e HTML. É um jogo da velha bem 
 - Formatação: Webpack + Babel
 
 ## Para testar o projeto
+Será necessária a instalação do Node.js para abrir o programa.
 ### Clone o repositório
 ```shell
 git clone https://github.com/GabrielUzel/Tic-Tac-Toe.git
