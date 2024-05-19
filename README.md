@@ -10,24 +10,4 @@ Meu primeiro projeto utilizando Javascript, CSS e HTML. É um jogo da velha bem 
 - Style: CSS
 - Formatação: Webpack + Babel
 
-## Para testar o projeto
-Será necessária a instalação do Node.js para abrir o programa.
-### Clone o repositório
-```shell
-git clone https://github.com/GabrielUzel/Tic-Tac-Toe.git
-```
-
-### Instale as dependências
-```shell
-npm install
-```
-
-### Inicie o server
-```shell
-npm start
-```
-
-### Acesse o site no seu browser
-```shell
-http://localhost:3000/
-```
+Acesse <a href="https://tictactoebyuzel.netlify.app/">aqui</a> o projeto
