@@ -9,5 +9,3 @@ Meu primeiro projeto utilizando Javascript, CSS e HTML. É um jogo da velha bem 
 - Marcação: HTML
 - Style: CSS
 - Formatação: Webpack + Babel
-
-Acesse <a href="https://tictactoebyuzel.netlify.app/">aqui</a> o projeto
